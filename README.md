@@ -76,6 +76,6 @@ In diesem Projekt beschreibe ich den Aufbau und Ablauf einer VPN Verbindung in d
     --> für die Webseite:
         -> Apache Webserver installieren
         -> Webseite in den Ordner: /etc/www/html/    verschieben (Tipps sind im Support-Fraud.-Repo)
-
+    ===> Server muss darüberhinaus vor unbefugten Zugriff geschützt werden (siehe Hacker-Oli-Repo)
 
 Viel Spaß beim Umsetzen!
