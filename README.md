@@ -1,6 +1,6 @@
 # Home-VPN-with-DS-Lite
 
-In diesem Projekt beschreibe ich den Aufbau und Ablauf einer VPN Verbindung in das Heimnetzwerk über einen s.g. DS-Lite anschluss.
+    In diesem Projekt beschreibe ich den Aufbau und Ablauf einer VPN Verbindung in das Heimnetzwerk über einen s.g. DS-Lite-Anschluss.
 
     -------- Mein Ziel -------------------------
     --> einen leistungsstarken PC über ein Wake-On-Lan Signal zu starten
@@ -37,7 +37,7 @@ In diesem Projekt beschreibe ich den Aufbau und Ablauf einer VPN Verbindung in d
     --> Somit verbinde ich mich vom meinem Laptop aus mit dem Server und bin so über diesen in meinem Heimnetzwerk
         -> Verschlüsselt und abhörsicher
         -> hohe Geschwindigkeit und geringe Latenz
-        -> Standortunabhängig
+        -> standortunabhängig
 
 ![Verbindungsaufbau](Verbindung.png)
 
@@ -51,9 +51,9 @@ In diesem Projekt beschreibe ich den Aufbau und Ablauf einer VPN Verbindung in d
         -> Speichere die Konfiguration (sysctl -p)
         -> (Server + RaspberryPi) Erstelle die Public- und PrivateKeys (cd /etc/wireguard) (umask 077; wg genkey | tee privatekey | wg pubkey > publickey)
         -> (Server + RaspberryPi)Erstelle die wg0.conf -- Konfigurationsdatei (sudo nano /etc/wireguard/wg0.conf)
-        -> Füge die Wireguard Konfiguration in die entsprechende Datei ein
-        -> (1. RaspberryPi, 2. Server)Starte die Verbindung (wg-quick up wg0)
-        -> schaue dir den Status an (wg show)
+        -> Füge die Wireguard Konfiguration in die entsprechende Datei ein (siehe Ordner)
+        -> (1. RaspberryPi, 2. Server) starte die Verbindung (wg-quick up wg0)
+        -> Schaue dir den Status an (wg show)
         -> Wireguard-Verbindung beim Neustart automatisch herstellen (systemctl enable wg-quick@wg0)
 
 
@@ -63,7 +63,7 @@ In diesem Projekt beschreibe ich den Aufbau und Ablauf einer VPN Verbindung in d
         -> Verbindung verschlüsselt
         -> keine Latenz spürbar
 
-    --> Windows: Parsec
+    --> WINDOWS: Parsec
         -> für Windows optimiert
         -> optimale Grafikübertragung
         -> keine Latenz spürbar (geeignet für Programme mit einer Notwendigkeit von geringer Reaktionszeiten)
@@ -71,11 +71,14 @@ In diesem Projekt beschreibe ich den Aufbau und Ablauf einer VPN Verbindung in d
 
 
     -------- Weiteres zu Beachten ------------------------
-    --> alle IP- und Macadressen müssen entsprechend angepasst werden (eigene IP: ifconfig, alle IP-Adressen im Netzwerk: arp -a) 
+    --> alle IP- und MAC-Adressen müssen entsprechend angepasst werden (eigene IP: ifconfig, alle IP-Adressen im Netzwerk: arp -a) 
     --> zum Bearbeiten der wg0.conf -> davor: wg-quick down wg0, danach: wg-quick up wg0 zur Wirksamkeit der Änderungen
+    --> Test der Verbindung mit ping 192.168.XX.XX
     --> für die Webseite:
-        -> Apache Webserver installieren
+        -> Apache2 Webserver installieren
         -> Webseite in den Ordner: /etc/www/html/    verschieben (Tipps sind im Support-Fraud.-Repo)
+    --> Hilfreiches Video bei Problemen: https://youtu.be/kIK0I9dwXh8 (Kanal: Apfelcast, Video-Titel: DS-Lite Portfreigaben erstellen inkl. ReverseProxy und VPN-Server)
     ===> Server muss darüberhinaus vor unbefugten Zugriff geschützt werden (siehe Hacker-Oli-Repo)
+    
 
 Viel Spaß beim Umsetzen!
