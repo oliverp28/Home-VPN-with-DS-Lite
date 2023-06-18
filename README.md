@@ -2,13 +2,13 @@
 
 In diesem Projekt beschreibe ich den Aufbau und Ablauf einer VPN Verbindung in das Heimnetzwerk über einen s.g. DS-Lite anschluss.
 
--------- Mein Ziel -------------------------
+    -------- Mein Ziel -------------------------
     --> einen leistungsstarken PC über ein Wake-On-Lan Signal zu starten
     --> Remote Verbindung zu dem PC
     ==> Zugang zu hoher Rechenleistung von überall auf der Welt aus
 
   
--------- Mein Setup ------------------------
+    -------- Mein Setup ------------------------
     --> Vodafone Standard-Router mit DS-Lite Vertrag
     --> Raspberry Pi
     --> PC
@@ -21,7 +21,7 @@ In diesem Projekt beschreibe ich den Aufbau und Ablauf einer VPN Verbindung in d
         -> hohe Sicherheit gegenüber Wireshark etc. (hoher Verschlüsselungsgrad)
 
 
-------- DS-Lite Problematik ----------------
+    ------- DS-Lite Problematik ----------------
     --> Aufgrund der wachsenden Anzahl an Geräten sinkt die Anzahl der öffentlich verfügbaren IPv4-Adressen (max 2^32)
     --> IPv6 löst diese Problematik mit insgesamt 2^128 Adressen
     --> Internet-Anbieter vergeben daher an die Kunden nur noch IPv6 Adressen
@@ -41,6 +41,6 @@ In diesem Projekt beschreibe ich den Aufbau und Ablauf einer VPN Verbindung in d
 
 
 
------------------- Einrichtung --------------------
+    ------------------ Einrichtung --------------------
 
 
