@@ -39,6 +39,8 @@ In diesem Projekt beschreibe ich den Aufbau und Ablauf einer VPN Verbindung in d
         -> hohe Geschwindigkeit und geringe Latenz
         -> Standortunabhängig
 
+    ![Verbindungsaufbau](Verbindung.png)
+
 
 
     ------------------ Einrichtung --------------------
