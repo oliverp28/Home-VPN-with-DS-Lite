@@ -56,6 +56,14 @@
         -> Schaue dir den Status an (wg show)
         -> Wireguard-Verbindung beim Neustart automatisch herstellen (systemctl enable wg-quick@wg0)
 
+    -------- Ablauf --------------------------------------
+    --> Start-Button auf Webseite öffnen
+    --> Wake-On-Lan-Signal wird gesendet
+    --> PC fährt hoch
+    --> Ping-Test validiert das Hochfahren
+    --> anschließend VPN-Home-Verbindung trennen und per Remote-Desktop verbinden
+    --> ggfs. nach dem Hochfahren die Möglichkeit gezielt mit Windows einen Reboot zu veranlassen
+
 
     -------- Remote Desktop Apps -------------------------
     --> LINUX: RustDesk
@@ -74,6 +82,10 @@
     --> alle IP- und MAC-Adressen müssen entsprechend angepasst werden (eigene IP: ifconfig, alle IP-Adressen im Netzwerk: arp -a) 
     --> zum Bearbeiten der wg0.conf -> davor: wg-quick down wg0, danach: wg-quick up wg0 zur Wirksamkeit der Änderungen
     --> Test der Verbindung mit ping 192.168.XX.XX
+    --> in meinem Fall: Gigabyte Mainboard und Netzwerkkarte: WakeOnLan-Funktion ist vorhanden aber nicht im BIOS integriert
+        -> standardmäßig ist WakeOnLan deaktiviert
+        --> ich habe ein Bash-Skript geschrieben welches als Systemprozess beim Hochfahren ausgeführt wird und somit beim nächsten 
+            Hochfahren im ROM-Speicher die Aktivierung des WakeOnLan-Signal speichert (in diesem Repo nicht hinterlegt)
     --> für die Webseite:
         -> Apache2 Webserver installieren
         -> Webseite in den Ordner: /etc/www/html/    verschieben (Tipps sind im Support-Fraud.-Repo)
